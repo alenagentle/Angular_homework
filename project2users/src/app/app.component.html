@@ -1,2 +1,2 @@
 <app-user [(user)]="currentUser" (userChange)="addUser()"></app-user>
-<app-list [users]="users" (userDelete)="deleteUser(user)"></app-list>
+<app-list [users]="users" (userDelete)="deleteUser($event)"></app-list>

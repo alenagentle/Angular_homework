@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ListItemComponent} from './list-item/list-item.component';
+import {ListComponent} from './list/list.component';
 import {User} from './shared/user.model';
 
 
@@ -30,9 +31,20 @@ export class AppComponent {
   getCurrentUser() {
     return new User(this.users.length, '', '', '');
   }
-  
-  deleteUser(user){
-	console.log('app.component delete:');
-	console.log(user);
+   
+  deleteUser(event: User[]){
+	console.log('app.component delete:', event);
+	let masUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+	for(let i=0; i<masUser.length; i++)
+	{
+		if(masUser[i].id==event.id)
+		{
+			masUser.splice(i,1);
+			console.log('перезаписанный массив = ', masUser);
+		}	
+	}
+	localStorage.cler;
+	localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(masUser));
+	this.users = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
   }
 }
