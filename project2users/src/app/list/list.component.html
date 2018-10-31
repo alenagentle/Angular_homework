@@ -2,3 +2,6 @@
 <div *ngFor="let user of users">
   <app-list-item [user]="user"  ></app-list-item>  <button (click)="deleteUser(this.user)" >Удалить</button>
 </div>
+<div>
+  <label>Всего {{ users.length | end }}</label>
+</div>
