@@ -6,7 +6,8 @@ import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
-import { EndPipe } from './list/end.pipe'
+import { EndPipe } from './list/end.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EndPipe } from './list/end.pipe'
   ],
   imports: [
     BrowserModule,
-	FormsModule,
+	  FormsModule,
+	  ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
